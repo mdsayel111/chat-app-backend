@@ -16,6 +16,9 @@ export const getMessageByUserIdService = async (userId: number) => {
     where: {
       senderId: userId,
     },
+    orderBy: {
+      createdAt: "desc",
+    },
   });
   return dataFromDB;
 };
