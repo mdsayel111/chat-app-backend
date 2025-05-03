@@ -2,14 +2,14 @@ import { Server } from "http";
 import config from "./app/config";
 import app from "./app/app";
 
-// handle unhandleRejection
+// handle unhandledRejection
 process.on("unhandledRejection", () => {
   // close all connection
   server.closeAllConnections();
 
   // turn off the server
   server.close(() => {
-    console.log("Unhandle rejection and turn off the server !");
+    console.log("Unhandled rejection and turn off the server !");
     process.exit(1);
   });
 });
