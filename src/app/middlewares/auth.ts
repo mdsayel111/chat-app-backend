@@ -4,6 +4,8 @@ import config from "../config";
 import catchAsync from "./HOF/catchAsyncHandler";
 import AppError from "../customClasses/customError";
 
+console.log("")
+
 const authMiddleware = catchAsync(
   async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const token = req.cookies.token;
